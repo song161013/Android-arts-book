@@ -1,7 +1,5 @@
 package com.ryg.chapter_7;
 
-import com.ryg.chapter_7.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,14 +16,14 @@ public class MainActivity extends Activity {
     }
 
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.button1) {
+        if (v.getId() == R.id.button1) {//Activity切换动画
             Intent intent = new Intent(this, TestActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
-        } else if (v.getId() == R.id.button2) {
+        } else if (v.getId() == R.id.button2) {//Button放大动画
             Intent intent = new Intent(this, DemoActivity_1.class);
             startActivity(intent);
-        } else if (v.getId() == R.id.button3) {
+        } else if (v.getId() == R.id.button3) {//LayoutAnimation
             Intent intent = new Intent(this, DemoActivity_2.class);
             startActivity(intent);
         }

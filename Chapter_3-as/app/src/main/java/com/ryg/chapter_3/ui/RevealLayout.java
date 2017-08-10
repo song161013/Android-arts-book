@@ -1,4 +1,4 @@
-package com.ryg.chapter_7.ui;
+package com.ryg.chapter_3.ui;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -10,13 +10,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.ryg.chapter_3.R;
+
 import java.util.ArrayList;
 
-import com.ryg.chapter_7.R;
-
 /**
- * 一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果，当它被点击的时候，
- * 为了性能，尽量不 要在内部放入复杂的元素
+ * 一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果，当它被点击的时候， 为了性能，尽量不要在内部放入复杂的元素
  * note: long click listener is not supported current for fix compatible bug.
  */
 public class RevealLayout extends LinearLayout implements Runnable {
@@ -72,8 +71,8 @@ public class RevealLayout extends LinearLayout implements Runnable {
     }
 
     private void initParametersForChild(MotionEvent event, View view) {
-        mCenterX = event.getX() ;
-        mCenterY = event.getY() ;
+        mCenterX = event.getX();
+        mCenterY = event.getY();
         mTargetWidth = view.getMeasuredWidth();
         mTargetHeight = view.getMeasuredHeight();
         mMinBetweenWidthAndHeight = Math.min(mTargetWidth, mTargetHeight);
@@ -86,7 +85,7 @@ public class RevealLayout extends LinearLayout implements Runnable {
         int[] location = new int[2];
         view.getLocationOnScreen(location);
         int left = location[0] - mLocationInScreen[0];
-        int transformedCenterX = (int)mCenterX - left;
+        int transformedCenterX = (int) mCenterX - left;
         mMaxRevealRadius = Math.max(transformedCenterX, mTargetWidth - transformedCenterX);
     }
 
@@ -157,6 +156,7 @@ public class RevealLayout extends LinearLayout implements Runnable {
                 break;
             }
         }
+
         return target;
     }
 
@@ -167,8 +167,7 @@ public class RevealLayout extends LinearLayout implements Runnable {
         int top = location[1];
         int right = left + view.getMeasuredWidth();
         int bottom = top + view.getMeasuredHeight();
-        if (view.isClickable() && y >= top && y <= bottom
-                && x >= left && x <= right) {
+        if (view.isClickable() && y >= top && y <= bottom && x >= left && x <= right) {
             return true;
         }
         return false;
@@ -193,10 +192,13 @@ public class RevealLayout extends LinearLayout implements Runnable {
             if (mTouchTarget == null || !mTouchTarget.isEnabled()) {
                 return;
             }
-            if (isTouchPointInView(mTouchTarget, (int)event.getRawX(), (int)event.getRawY())) {
+
+            if (isTouchPointInView(mTouchTarget, (int) event.getRawX(), (int) event.getRawY())) {
                 mTouchTarget.performClick();
             }
         }
-    };
+    }
+
+    ;
 
 }
