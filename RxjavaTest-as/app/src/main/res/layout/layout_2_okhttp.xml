@@ -6,12 +6,12 @@
     tools:context=".MainActivity">
 
     <Button
-    android:id="@+id/_1rxjava_btn"
+    android:id="@+id/_2okhttp_btn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="_1RxJava Btn" />
+    android:text="okhttp Btn" />
     <TextView
-        android:id="@+id/_1rxjava_tv"
+        android:id="@+id/_2okhttp_tv"
         android:text="自带的tx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

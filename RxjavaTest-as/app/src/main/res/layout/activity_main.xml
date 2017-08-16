@@ -7,16 +7,16 @@
     android:orientation="vertical"
     >
 
-    <Button
-        android:id="@+id/_2rxjava_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="_2RxJava Btn" />
+
 
     <Button
         android:id="@+id/_1rxjava_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="_1RxJava Btn" />
-
+    <Button
+        android:id="@+id/_2_OkHttp_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="_2_OkHttp Btn" />
 </LinearLayout>
